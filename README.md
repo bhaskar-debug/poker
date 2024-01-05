@@ -77,5 +77,13 @@ The value inside parenthesis indicates the representation within the test set as
 
 ## Google colab
 
-Download this repository https://github.com/bhaskar-debug/poker/tree/main as zip file.
-After unzipping copy the folder poker to the Google drive of the Google account which has access to the Google colab
+- Download this repository https://github.com/bhaskar-debug/poker/tree/main as zip file.
+- After unzipping copy the folder poker to the Google drive of the Google account which has access to the Google Colab.
+- Open this file `poker-hand-classification.ipynb` by double clinking it will open in Google Colab.
+- After opening in Google Colab on right side you will see Ram and Disk. Click on it, it will open resources.
+- Click on the `Change Runtime type` button to change the runtime at down.
+- Make sure to click on the TPU and High RAM as they are available in `Colab Pro+` account, it will speed up thr training time.
+- Now run the notebook cells one by one.
+- `Google Drive mount` step will automatically mount the Google drive to Colab which will allow you to save all the files back to the same location and model and everything in the google drive.
+- Proceed to do step by step instructions in the notebook cells.
+- At the end of the completion of task please share the Google Drive location of your task.
