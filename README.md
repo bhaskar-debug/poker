@@ -74,3 +74,8 @@ The value inside parenthesis indicates the representation within the test set as
       9: Royal flush, 3 instances, (1.948052)
 
       Total of one million instances in a domain of 311,875,200.
+
+## Google colab
+
+Download this repository https://github.com/bhaskar-debug/poker/tree/main as zip file.
+After unzipping copy the folder poker to the Google drive of the Google account which has access to the Google colab
