@@ -77,13 +77,24 @@ The value inside parenthesis indicates the representation within the test set as
 
 ## Google colab
 
-- Download this repository https://github.com/bhaskar-debug/poker/tree/main as a zip file.
+### Phase 1: Poker hand Prediction Task
+
+- Download this repository https://drive.google.com/drive/folders/1nRhbyhyzSSwsjwuXeJZ84FoQE_TtVxBE?usp=drive_link as a zip file.
 - After unzipping copy the folder poker to the Google Drive of the Google account which has access to the Google Colab.
-- Open this file `poker-hand-classification.ipynb` by double-clicking it will open in Google Colab.
+- Open this file `poker-hand-prediction.ipynb` by double-clicking it will open in Google Colab.
 - After opening in Google Colab on the right side you will see RAM and Disk. Click on it, it will open resources.
 - Click on the `Change Runtime type` button to change the runtime at down.
 - Make sure to click on the TPU and High RAM as they are available in the `Colab Pro+` account, it will speed up the training time.
 - Now run the notebook cells one by one.
 - `Google Drive mount` step will automatically mount the Google Drive to Colab, allowing you to save all the files back to the same location and model and everything in the Google Drive.
 - Proceed to do step-by-step instructions in the notebook cells.
+- Goto folder `sample_player` you will see the folder `utils_teamACN` rename it to your team name like `utils_yourteamname`.
+- The whole cell in preprocess TODO step, copy it in your `sample_player/utils_yourteamname/preprocess.py` for future use of preprocess step in prediction.
+
+### Phase 2: Poker Pre flop strategy and flop strategy creation using the prediction made in phase 1
+
+- Open this file `poker-strategy.ipynb` by double-clicking it will open in Google Colab.
+- After opening the file same change the runtime as Phase 1 and follow the instructions in the notebook.
+- The whole cell in pre_flop TODO step, copy it in your `sample_player/utils_yourteamname/pre_flop_strategy.py` for use in poker game showdown.
+- The whole cell in flop TODO step, copy it in your `sample_player/utils_yourteamname/flop_strategy.py` for use in poker game showdown.
 - At the end of the completion of the task please share the Google Drive location of your task.
