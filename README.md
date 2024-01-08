@@ -86,7 +86,7 @@ The value inside parenthesis indicates the representation within the test set as
 - Click on the `Change Runtime type` button to change the runtime at down.
 - Make sure to click on the TPU and High RAM as they are available in the `Colab Pro+` account, it will speed up the training time.
 - Now run the notebook cells one by one.
-- `Google Drive mount` step will automatically mount the Google Drive to Colab, allowing you to save all the files back to the same location and model and everything in the Google Drive.
+- `Google Drive mount` step will automatically mount the Google Drive to Colab, allowing you to save all the files back to the same location and model and everything in the Google Drive.(Select the Google drive account previously where colab pro plus account is and al the data saved previously and allow them in every step)
 - Proceed to do step-by-step instructions in the notebook cells.
 - Goto folder `sample_player` you will see the folder `utils_teamACN` rename it to your team name like `utils_yourteamname`.
 - The whole cell in preprocess TODO step, copy it in your `sample_player/utils_yourteamname/preprocess.py` for future use of preprocess step in prediction.

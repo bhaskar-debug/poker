@@ -12,6 +12,15 @@ data_path = f"{root}/data"
 
 
 def get_model_input(cards) -> list:
+    """
+    Converts card representations from strings to numerical values suitable for model input.
+
+    Args:
+        cards (list): A list of strings, where each string represents a single card in the format "RankSuit" (e.g., "AS", "KD").
+
+    Returns:
+        list: A list of numerical values representing the cards, where suits are mapped to integers 1-4 and ranks to integers 1-13.
+    """
     suit = {"H": 1, "S": 2, "D": 3, "C": 4}
     rank = {
         "A": 1,
@@ -42,7 +51,19 @@ def get_model_input(cards) -> list:
 
 
 def get_best_hand(model_input, model_file_path=f"{root}/model/saved_model_teamACN.pkl"):
-    # Specify the path to your pickled model file
+    """
+    Predicts the best poker hand category for a given set of model inputs using a pre-trained model.
+
+    Args:
+        model_input (list): A list of numerical values representing the poker hand features.
+            The values should be in the order of [S1, C1, S2, C2, S3, C3, S4, C4, S5, C5],
+            where Sx represents suit and Cx represents rank.
+        model_file_path (str, optional): The file path to the pickled model file. Default is the path
+            to the pre-trained model file.
+
+    Returns:
+        int: The predicted poker hand category.
+    """
 
     # Load the model from the pickled file
     with open(model_file_path, "rb") as file:
@@ -59,6 +80,16 @@ def get_best_hand(model_input, model_file_path=f"{root}/model/saved_model_teamAC
 
 
 def evaluate_poker_hand(hand, best_hand) -> int:
+    """
+    Evaluates the specific value or rank of a poker hand based on its best hand category.
+
+    Args:
+        hand (list): A list of numerical values representing the poker hand, where even indices are ranks and odd indices are suits.
+        best_hand (int): The numerical category of the best possible hand (0-9).
+
+    Returns:
+        int: The value or rank of the hand's key card(s), determined based on the best hand category.
+    """
     # Sort the hand by rank
     sorted_hand = sorted(hand[1::2], reverse=True)
 
@@ -83,6 +114,18 @@ def evaluate_poker_hand(hand, best_hand) -> int:
 def get_model_output(
     hands, team_name, model_file_path=f"{root}/model/saved_model_teamACN.pkl"
 ):
+    """
+    Identifies the best possible poker hand and its rank from a collection of hands using a model.
+
+    Args:
+        hands (list): A list of lists, where each inner list represents a set of cards (e.g., [["AS", "KD"], ["QH", "JC"]]).
+        team_name (str): The name of the team whose hands are being evaluated.
+        model_file_path (str, optional): The file path to the pickled model file. Default is the path
+            to the pre-trained model file.
+
+    Returns:
+        tuple[int, int]: A tuple containing the best hand category (0-9) and the rank of the key card(s) in that hand.
+    """
     best_hands = {}
     best_hand = 0
     highest_rank = 0
