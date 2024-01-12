@@ -2,6 +2,7 @@ import pickle
 from itertools import combinations
 from statistics import mode
 
+import numpy as np
 import pandas as pd
 
 from sample_player.logger import logger  # noqa
@@ -50,7 +51,11 @@ def get_model_input(cards) -> list:
     return model_input
 
 
-def get_best_hand(model_input, model_file_path=f"{root}/model/saved_model_teamACN.pkl"):
+def get_best_hand(
+    model_input,
+    model_file_path=f"{root}/model/saved_model_teamACN.pkl",
+    model_name="model",
+):
     """
     Predicts the best poker hand category for a given set of model inputs using a pre-trained model.
 
@@ -60,6 +65,7 @@ def get_best_hand(model_input, model_file_path=f"{root}/model/saved_model_teamAC
             where Sx represents suit and Cx represents rank.
         model_file_path (str, optional): The file path to the pickled model file. Default is the path
             to the pre-trained model file.
+        model_name (str, optional): The name of the model. Defaults to 'model'.
 
     Returns:
         int: The predicted poker hand category.
@@ -75,6 +81,14 @@ def get_best_hand(model_input, model_file_path=f"{root}/model/saved_model_teamAC
     df_model_input = pd.DataFrame([model_input], columns=column_names)
 
     x = pre_process_data(df_model_input)
+    if "lstm" in model_name.lower():
+        # Assuming model_input has shape (batch_size, num_features)
+        x_reshaped = np.expand_dims(x, axis=1)
+        y_pred = loaded_model.predict(x_reshaped)
+        # Get the index of the maximum probability
+        predicted_class = np.argmax(y_pred)
+        return [predicted_class]
+
     y_pred = loaded_model.predict(x)
     return y_pred
 

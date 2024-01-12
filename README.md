@@ -81,10 +81,11 @@ The value inside parenthesis indicates the representation within the test set as
 
 - Download this repository https://drive.google.com/drive/folders/1nRhbyhyzSSwsjwuXeJZ84FoQE_TtVxBE?usp=drive_link as a zip file.
 - After unzipping copy the folder poker to the Google Drive of the Google account which has access to the Google Colab.
+- CLick on the 3 dots button on the right hand side of the file `poker-hand-prediction.ipynb` and click on on open with > connect more apps > search for google colab and install it, if google colab is not there already.
 - Open this file `poker-hand-prediction.ipynb` by double-clicking it will open in Google Colab.
 - After opening in Google Colab on the right side you will see RAM and Disk. Click on it, it will open resources.
 - Click on the `Change Runtime type` button to change the runtime at down.
-- Make sure to click on the TPU and High RAM as they are available in the `Colab Pro+` account, it will speed up the training time.
+- Make sure to click on the A100 GPU and High RAM as they are available in the `Colab Pro+` account, it will speed up the training time.
 - Now run the notebook cells one by one.
 - `Google Drive mount` step will automatically mount the Google Drive to Colab, allowing you to save all the files back to the same location and model and everything in the Google Drive.(Select the Google drive account previously where colab pro plus account is and al the data saved previously and allow them in every step)
 - Proceed to do step-by-step instructions in the notebook cells.
@@ -98,3 +99,12 @@ The value inside parenthesis indicates the representation within the test set as
 - The whole cell in pre_flop TODO step, copy it in your `sample_player/utils_yourteamname/pre_flop_strategy.py` for use in poker game showdown.
 - The whole cell in flop TODO step, copy it in your `sample_player/utils_yourteamname/flop_strategy.py` for use in poker game showdown.
 - At the end of the completion of the task please share the Google Drive location of your task.
+
+### Final Submission
+
+- Locate the Folder:Find the folder "poker"(assuming you haven't changed the folder name) you want to share in your Google Drive.
+- Right-click on the folder you want to share. A menu will appear.
+- Select "Share": Click on the "Share" option from the menu.
+- Set Visibility: In the sharing settings, you'll see the option "Anyone with the link." Set the access level to "Viewer" by clicking on the dropdown menu next to it.
+- Copy the Link: Click on "Copy link" to copy the sharing link to your clipboard.
+- Share the link with Shane (Shane.Landymore100@mod.gov.uk)
